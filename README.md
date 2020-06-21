@@ -145,3 +145,20 @@ hello_airflow
 ```
 
 ![](./images/airflow-webserver-1.png)
+
+## Ops
+
+### 依存パッケージの管理
+ビルトインの `venv` モジュールを使用して仮想環境を管理しているので、スクリプトが依存するパッケージについてメンバー間で同期する方法が必要になる。今回は `pip` モジュールに組み込みの機能を利用して解決する。
+
+#### 1. 依存パッケージの追加
+WIP
+
+#### 2. 依存関係の更新
+!!仮想環境を分けることでしか開発時にのみ必要なパッケージを Lock の対象から外すといったことができない!!
+
+今回は個人での開発であるので、この不都合については特に気にしないことにする。
+
+```shell
+% pip freeze --local -r dependencies/requirements.txt > dependencies/requirements.lock
+```
